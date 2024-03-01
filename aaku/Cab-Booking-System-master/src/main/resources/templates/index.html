@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cab Booking:Book your cab and explore the world</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper7/swiper-bundle.min.css" />
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" th:href="@{~/css/style.css}">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-car"></i> Cab Booking </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#features">features</a>
+        <a href="#products">vehicles</a>
+        <a href="#categories">categories</a>
+        <a th:href="@{~/user/profile/}+${info.id}" class="fas fa-user"></a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+<!--        <div class="fas fa-search" id="search-btn"></div>-->
+<!--        <div class="fas fa-car" id="cart-btn"></div>-->
+<!--        <div class="fas fa-user" id="login-btn"><a th:href="@{~/login}"></a></div>-->
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>we've got all <span>great</span> models for your</h3>
+        <p>Cab Booking apps will help your business grow revenues, increase customer satisfaction, and gain global coverage.</p>
+        <a href="#" class="btn">Find More</a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- features section starts  -->
+
+<section class="features" id="features">
+
+    <h1 class="heading"> our <span>features</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img th:src="@{~/image/feature-img-1.png}" alt="">
+            <h3>Brand New</h3>
+            <p>Cab Booking will help your business grow revenues, increase customer satisfaction, and gain global coverage.</p>
+<!--            <a href="#" class="btn">read more</a>-->
+        </div>
+
+        <div class="box">
+            <img th:src="@{~/image/feature-img-2.png}" alt="">
+            <h3>Free delivery</h3>
+            <p>Cab Booking will help your business grow revenues, increase customer satisfaction, and gain global coverage.</p>
+<!--            <a href="#" class="btn">read more</a>-->
+        </div>
+
+        <div class="box">
+            <img th:src="@{~/image/feature-img-3.png}" alt="">
+            <h3>Easy payments</h3>
+            <p>Cab Booking apps will help your business grow revenues, increase customer satisfaction, and gain global coverage.</p>
+<!--            <a href="#" class="btn">read more</a>-->
+        </div>
+
+    </div>
+
+</section>
+
+<!-- features section ends -->
+
+<!-- products section starts  -->
+
+<section class="products" id="products">
+
+    <h1 class="heading"> Our <span>vehicles</span> </h1>
+
+    <div class="swiper product-slider">
+
+        <div class="swiper-wrapper">
+            <div class="swiper-slide box" th:each="cars:${carlist}">
+                <img th:src="'data:image/png;base64,'+${cars.imageBase64}">
+                <h3 th:text="${cars.carname}"></h3>
+                <div class="price" th:text="${cars.price}">  </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+
+<!--                <form th:action="@{/user/saverequest}" th:object="${savecar}" th:method="post" >-->
+
+<!--                    <input type="email" hidden="hidden" class="box" name="user_id" th:value="${info.id}">-->
+<!--                    <input type="password" hidden="hidden"   class="box" th:field="*{id}">-->
+<!--                    <input type="submit" class="btn" value="See">-->
+
+<!--                    <button type="submit" class="btn">Book Now</button>-->
+                <a th:href="@{~/user/carsinfo/}+${cars.id}" class="btn">Book</a>
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+</section>
+
+<!-- products section ends -->
+
+
+<!--Categories section starts here..-->
+    <section class="categories" id="categories">
+        <h1 class="heading"><span>Categories</span></h1>
+        <div class="box-container">
+
+            <div class="box">
+                <img th:src="@{~/image/cat-1.png}" alt="">
+                <h3>Oldtimer</h3>
+                <p>upto 45%</p>
+<!--                <a href="#" class="btn">Book Now</a>-->
+            </div>
+            <div class="box">
+                <img th:src="@{~/image/cat-2.png}" alt="">
+                <h3>Luxury Car</h3>
+                <p>upto 40%</p>
+<!--                <a href="#" class="btn">Book Now</a>-->
+            </div>
+            <div class="box">
+                <img th:src="@{~/image/cat-3.png}" alt="">
+                <h3>Oldtimer rolls royce</h3>
+                <p>upto 20%</p>
+<!--                <a href="#" class="btn">Book Now</a>-->
+            </div>
+
+        </div>
+    </section>
+<!--Categories section ends here..-->
+
+
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Cabs <i class="fas fa-car"></i></h3>
+            <p>Lorem ipsum dolor sit, amet consectur adipisicin elit
+                Unde sunt fugiat dolore ipsum id est maxime ad tempore quasi tenetur
+            </p>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Contact info</h3>
+            <a href="#" class="links"> <i class="fas fa-phone">+977 0000 000 000</i></a>
+            <a href="#" class="links"> <i class="fas fa-envelope">bikesh@gmail.com</i></a>
+            <a href="#" class="links"> <i class="fas fa-map-marker-alt">Bikesh </i></a>
+        </div>
+
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="#" class="links"> <i class="fas fa-arrow-right">Home</i></a>
+            <a href="#" class="links"> <i class="fas fa-arrow-right">features</i></a>
+            <a href="#" class="links"> <i class="fas fa-arrow-right">vehicles</i></a>
+            <a href="#" class="links"> <i class="fas fa-arrow-right">categories</i></a>
+
+        </div>
+
+        <div class="box">
+            <h3>Newsletter</h3>
+           <p>Subscribe for the latest updates</p>
+           <input type="email" class="email" placeholder="your email">
+           <input type="submit" class="btn" value="Subscribe">
+           
+        </div>
+
+    </div>
+</section>
+<!--footer section ends here..-->
+
+
+<script th:src="@{~/https://unpkg.com/swiper@7/swiper-bundle.min.js}"></script>
+
+<!-- custom js file link  -->
+<script th:src="@{~/js/script.js}"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+
+</head>
+<body>
+<main>
+    <div class="d-flex w-100 justify-center align-center parallax">
+
+        <div class="container d-flex flex-col justify-center align-center">
+            <form action=""  th:action="@{/login}" method="post" id="signUp">
+                <fieldset class="form d-flex flex-col align-start">
+                    <!-- Title -->
+                    <div class="title d-flex align-center justify-center">
+                        <legend>
+                            <span>L</span><span>o</span><span>g</span><span>in</span>
+                        </legend>
+                    </div>
+                    <!-- Email -->
+                    <div class="input-box w-100 d-flex">
+                        <label for="email" class="d-flex align-center justify-center">
+                            <img src="https://i.ibb.co/RBj7wKt/mail.png" alt="mail" />
+                        </label>
+                        <input
+                                class="input-style w-100"
+                                id="email"
+                                type="email"
+                                placeholder="Email Address"
+                                required
+                                name="email"
+                        />
+                    </div>
+                    <!-- Password -->
+                    <div class="input-box w-100 d-flex">
+                        <label
+                                for="password"
+                                class="d-flex align-center justify-center"
+                        >
+                            <img src="https://i.ibb.co/sJR25cg/key.png" alt="password" />
+                        </label>
+                        <input
+                                class="input-style w-100"
+                                type="password"
+                                id="password"
+                                placeholder="Password"
+                                required
+                                name="password"
+                        />
+                    </div>
+
+                    <!-- Login Link and Submit -->
+                    <div class="d-flex justify-between align-center w-100 bottom">
+                        <div>
+                  <span> Create an account?</span
+                  ><a th:href="@{~/user/signup}" class="login">Signup</a>
+                        </div>
+                        <button type="submit" form="signUp" value="Login">
+                            Submit
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+</html>

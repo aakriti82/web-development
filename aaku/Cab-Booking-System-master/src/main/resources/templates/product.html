@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" th:href="@{~/css/product.css}">
+</head>
+<body>
+<div class = "card-wrapper">
+  <div class = "card">
+    <!-- card left -->
+    <div class = "product-imgs">
+      <div class = "img-display">
+        <div class = "img-showcase">
+          <img th:src="'data:image/png;base64,'+${savecar.imageBase64}">
+        </div>
+      </div>
+   
+    </div>
+    <!-- card right -->
+    <div class = "product-content">
+      <h2 class = "product-title" th:text="${savecar.carname}"></h2>
+     
+      
+
+      <div class = "product-price">
+        <p class = "new-price">New Price: <span th:text="${savecar.price}"></span></p>
+      </div>
+
+      <div class = "product-detail">
+        <h2>about this Car: </h2>
+        <ul>
+          <li>Car name: <span th:text="${savecar.carname}"></span></li>
+          <li>Car Model: <span th:text="${savecar.carmodel}"></span></li>
+          <li>Car_no: <span th:text="${savecar.car_no}"></span></li>
+
+        </ul>
+      </div>
+
+      <form th:action="@{/user/saverequest}" th:object="${request}" th:method="post" >
+      <div class = "purchase-info">
+          <input type="text" hidden="hidden" class="box" name="user_id" th:value="${info.id}">
+          <input type="text"   hidden="hidden" class="box" name="cars_id" th:value="${savecars.id}">
+          <input type="date" required   class="box" th:field="*{dateFrom}">
+          <input type="date" required class="box" th:field="*{dateTo}" >
+          <input type="text" required placeholder="people" class="box" th:field="*{people}" >
+        <button type="submit" class = "btn">Book Now</button>
+      </div>
+      </form>
+
+
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

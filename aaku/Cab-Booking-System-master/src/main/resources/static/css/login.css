@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  background-image: url(https://i.ibb.co/74193YX/bg.png);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Font */
+label,
+p,
+a,
+button,
+select,
+input,
+span {
+  font-family: "Poppins", sans-serif;
+  color: black;
+}
+
+/* Flex Styles - Start */
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.justify-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.justify-start {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.justify-end {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.justify-around {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+.justify-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.justify-evenly {
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+}
+.align-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.align-start {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.flex-col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.w-100 {
+  width: 100%;
+}
+/* Flex Styles - End */
+
+/* Header - Start */
+header {
+  position: relative;
+  z-index: 2;
+}
+
+header img {
+  margin: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+/* Header - Start */
+
+/* Title - Start */
+.title {
+  width: 100%;
+  height: 180px;
+  background-image: url(https://i.ibb.co/vLdVNHy/gradient.png);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: center center;
+  border-radius: 15px 15px 0 0;
+  margin-bottom: 25px;
+  border: 3px solid black;
+}
+
+.title img {
+  width: 280px;
+}
+
+legend {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 3.2em;
+  letter-spacing: 0.5px;
+  /* color: white; */
+  -webkit-text-stroke: 1.5px black;
+}
+
+legend > span:nth-child(1) {
+  color: #ffbfcd;
+}
+legend > span:nth-child(2) {
+  color: #a2defd;
+}
+legend > span:nth-child(3) {
+  color: #fce3a0;
+}
+legend > span:nth-child(4) {
+  color: #8ea3e2;
+}
+legend > span:nth-child(5) {
+  color: #ffbfcd;
+}
+legend > span:nth-child(6) {
+  color: #a2defd;
+}
+/* Title - End */
+
+/* Main Container - Start */
+main {
+  width: 100vw;
+}
+
+.parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 1px;
+  perspective: 1px;
+}
+
+.stars {
+  z-index: -1;
+  position: absolute;
+  top: 6em;
+  left: 0;
+  width: 100vw;
+  -webkit-transform: translateZ(-1px) scale(1.9);
+  transform: translateZ(-1px) scale(1.9);
+}
+
+.container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 15px;
+  border: 3px solid black;
+  margin: 10em 1em 10em 2em;
+}
+
+@media only screen and (min-width: 1660px) {
+  .stars {
+    left: auto;
+    right: auto;
+    width: 79vw;
+  }
+}
+
+@media screen and (max-height: 615px) {
+  .parallax {
+    min-height: 800px;
+    height: 100vh;
+  }
+
+  .container {
+    margin: 22em 1em 8em 2em;
+  }
+}
+
+@media screen and (min-height: 1000px) and (min-width: 820px) {
+  .stars {
+    margin-top: -10em;
+  }
+
+  .container {
+    margin: 12em 1em 10em 2em;
+  }
+}
+
+@media screen and (min-width: 615px) {
+  .container {
+    min-width: 530px;
+  }
+}
+
+.container > img {
+  width: 100%;
+  height: 200px;
+}
+
+.container::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 15px;
+  left: -20px;
+  height: 100%;
+  width: 100%;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#f2effe),
+    to(#feedeb)
+  );
+  background: -o-linear-gradient(left, #f2effe, #feedeb);
+  background: linear-gradient(to right, #f2effe, #feedeb);
+  border-radius: 15px;
+  border: 3px solid black;
+}
+
+#signUp {
+  width: 100%;
+  padding: 40px;
+}
+
+@media only screen and (max-width: 900px) {
+  .parallax {
+    position: relative;
+    height: 100%;
+    max-height: none;
+    width: 100%;
+    overflow-x: initial;
+    overflow-y: initial;
+    -webkit-perspective: none;
+    perspective: none;
+  }
+
+  .container {
+    margin: 2em 1em 6em 2em;
+  }
+
+  .stars {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #signUp {
+    padding: 20px;
+  }
+}
+/* Main Container - End */
+
+/* Form Inputs - Start */
+.input-box,
+.subscribe {
+  margin-bottom: 17px;
+  border: 3px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.subscribe {
+  padding: 18px 15px;
+  background: url(https://i.ibb.co/g67Qsb6/gradient1.png);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: -5px -10px;
+}
+
+.subscribe span {
+  margin-left: 10px;
+}
+
+.input-box > label {
+  width: 65px;
+  height: 55px;
+  background-color: #fff9df;
+  border-right: 3px solid black;
+}
+
+.input-box > label > img {
+  max-height: 30px;
+  max-width: 30px;
+}
+
+.input-style {
+  border: none;
+  font-size: 16px;
+  padding: 15px;
+}
+
+select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Safari, Chrome, Opera */
+  -webkit-appearance: none;
+}
+
+/* for IE10 */
+select::-ms-expand {
+  display: none;
+}
+/* Form Inputs - Start */
+
+/* Login and Submit - Start */
+.bottom {
+  margin-top: 20px;
+}
+
+.bottom button {
+  padding: 10px 33px 8px;
+  border: 3px solid black;
+  border-radius: 100px;
+  background-color: #a2defd;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  color: black;
+}
+
+.bottom span {
+  margin-right: 10px;
+}
+
+.bottom .login {
+  color: #e6889d;
+  text-decoration: none;
+  border-bottom: 3px solid black;
+}
+/* Login and Submit - End */

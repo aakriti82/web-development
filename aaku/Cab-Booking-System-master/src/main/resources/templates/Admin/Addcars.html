@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title> Add the new cars here</title>
+    <link rel="stylesheet" th:href="@{~/css/register.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="container">
+    <div style="background-image: url('static/image/banner.jpg');"></div>
+    <div class="title">Registration</div>
+    <div class="content">
+        <form th:action="@{/admin/savecars}" th:object="${addcars}" th:method="post" enctype="multipart/form-data">
+            <input type="text" class="form-control is-valid" hidden="hidden" th:field="*{id}" th:value="${addcars.id}">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Car Name</span>
+                    <input type="text" placeholder="Enter Car name" th:field="*{carname}">
+                </div>
+                <div class="input-box">
+                    <span class="details">Car Model</span>
+                    <input type="text" placeholder="Enter your Car Model" th:field="*{carmodel}">
+                </div>
+                <div class="input-box">
+                    <span class="details">Car Number</span>
+                    <input type="text" placeholder="Enter  Car number" th:field="*{car_no}">
+                </div>
+                <div class="input-box">
+                    <span class="details">Price</span>
+                    <input type="text" placeholder="Enter your price" th:field="*{price}">
+                </div>
+                <div class="input-box">
+                    <span class="details">Image</span>
+                    <input type="file"  name="image" accept="image/*" required>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
